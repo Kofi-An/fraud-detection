@@ -25,22 +25,22 @@
 ## The core challenge
 
 A naive model predicting no fraud on every transaction
-achieves 99.83% accuracy — and catches zero fraudsters.
+achieves 99.83% accuracy, and catches zero fraudsters.
 Accuracy is the wrong metric entirely for imbalanced data.
 
 This project addresses three real challenges every
 fraud detection team faces daily:
 
-**1. Class imbalance** — 492 fraud cases in 284,807
+**1. Class imbalance** 492 fraud cases in 284,807
 transactions (0.17%). Solved with SMOTE resampling
 applied to training data only.
 
-**2. Metric selection** — Precision-Recall AUC used as
+**2. Metric selection** Precision-Recall AUC used as
 primary metric instead of ROC-AUC. At 0.17% fraud rate
 ROC is optimistic. PR-AUC of 0.8026 vs random baseline
-of 0.0017 — a 479x improvement.
+of 0.0017 a 479x improvement.
 
-**3. Explainability** — SHAP values provide feature-level
+**3. Explainability** SHAP values provide feature-level
 explanation for every prediction. Regulatory requirement
 for deployed fraud models. Black-box models cannot be
 approved by risk committees.
@@ -59,7 +59,7 @@ approved by risk committees.
 | 4 | V8 | 0.5701 | Moderate signal |
 | 5 | V1 | 0.5568 | Moderate signal |
 
-V14 is 29% stronger than V4 — the single most
+V14 is 29% stronger than V4 the single most
 predictive feature. V1-V28 are PCA-transformed
 components whose raw meaning is confidential to the
 issuing bank. SHAP reveals their relative importance
@@ -71,14 +71,14 @@ For the highest-confidence fraud transaction:
 - V14 contributed +5.39 toward fraud prediction
 - V8 and V18 pulled -0.58 and -0.52 away from fraud
 - The fraudster mimicked legitimate behaviour in
-  certain dimensions — a sophisticated fraud pattern
+  certain dimensions a sophisticated fraud pattern
 
 **Data quality finding:**
 
 One of 5 false alarms had a fraud probability of
 0.9999 with an identical SHAP signature to confirmed
 fraud cases. This transaction is almost certainly
-mislabelled in the original dataset — demonstrating
+mislabelled in the original dataset demonstrating
 that SHAP explainability functions as a data quality
 audit tool not just a model explanation tool.
 
@@ -88,15 +88,15 @@ audit tool not just a model explanation tool.
 
 EDA revealed a classic two-pattern fraud distribution:
 
-- **Card testing** — 13.82% of fraud transactions are
+- **Card testing** 13.82% of fraud transactions are
   near-zero amounts. Fraudsters verify a stolen card
   is active before making larger purchases.
-- **High-value fraud** — a small number of large
+- **High-value fraud** a small number of large
   transactions pull the mean to $122.21 despite a
   median of only $9.25
 - **98% of fraud transactions** drive 80% of total
-  fraud value — Pareto concentration applies
-- **578:1 imbalance ratio** — one of the most extreme
+  fraud value Pareto concentration applies
+- **578:1 imbalance ratio** one of the most extreme
   in any public dataset
 
 ---
@@ -144,7 +144,7 @@ cd fraud-detection
 python -m venv .venv
 .venv\Scripts\activate
 pip install -r requirements.txt
-# Download creditcard.csv from Kaggle — place in data/raw/
+# Download creditcard.csv from Kaggle, place in data/raw/
 jupyter notebook
 ```
 
@@ -152,7 +152,7 @@ jupyter notebook
 
 ## Data source
 
-ULB Machine Learning Group — Credit Card Fraud Detection
+ULB Machine Learning Group Credit Card Fraud Detection
 284,807 transactions | 492 fraud cases | 0.17% fraud rate
 kaggle.com/datasets/mlg-ulb/creditcardfraud
 
@@ -160,7 +160,7 @@ kaggle.com/datasets/mlg-ulb/creditcardfraud
 
 ## Limitations
 
-- V1-V28 are PCA-transformed — raw feature meaning
+- V1-V28 are PCA-transformed raw feature meaning
   unavailable due to bank confidentiality
 - Dataset contains mislabelled transactions
   identified via SHAP audit
@@ -168,23 +168,12 @@ kaggle.com/datasets/mlg-ulb/creditcardfraud
 - Results may differ on datasets with different
   base rates or feature distributions
 
----
-
-## Related projects
-
-- [Credit Risk Scorecard](https://github.com/Kofi-An/credit-risk-scorecard)
-  — AUC 0.71, $275M loss reduction
-- [Portfolio Risk Dashboard](https://kofi-an-portfolio-risk-dashboard.streamlit.app)
-  — Live VaR, CVaR, Monte Carlo app
-
----
 
 ## Author
 
-Kofi-An | Financial Data Scientist
-Open to remote roles in fraud analytics,
-quant risk, and financial data science
+Kofi-Anku | Financial Data Scientist
+
 
 [GitHub](https://github.com/Kofi-An) ·
-[LinkedIn](https://linkedin.com/in/your-handle) ·
+[LinkedIn](www.linkedin.com/in/wka7) ·
 [Portfolio](https://kofi-an.github.io)
