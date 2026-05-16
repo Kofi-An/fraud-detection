@@ -177,3 +177,7 @@ Kofi-Anku | Financial Data Scientist
 [GitHub](https://github.com/Kofi-An) ·
 [LinkedIn](www.linkedin.com/in/wka7) ·
 [Portfolio](https://kofi-an.github.io)
+
+
+## Kaggle Notebook
+(View on Kaggle) (https://www.kaggle.com/code/worlanyoanku/xgboost-fraud-detection-smote-shap)
